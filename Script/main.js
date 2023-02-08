@@ -1,5 +1,6 @@
 // start main slider
 const images = document.querySelectorAll(".main .background img");
+const smallImages = document.querySelectorAll(".main .background img.small");
 const fields = document.querySelectorAll(".main .fields .field");
 fields[0].classList.add("active-field");
 let i = 0;
@@ -15,17 +16,31 @@ setTimeout(() => {
     if (i != 0) fields[i - 1].classList.remove("active-field");
     fields[i].classList.add("active-field");
     //images
-    if (img == -1) {
-      for (let i = 5; i >= 0; i--) {
-        images[i].classList.remove("image-desactive");
+    if (screen.width < 769) {
+      if (img == -1) {
+        for (let i = 5; i >= 0; i--) {
+          smallImages[i].classList.remove("image-desactive");
+        }
+        img = 5;
       }
-      img = 5;
+      if (img == 0) {
+        smallImages[5].classList.remove("image-desactive");
+      }
+      smallImages[img].classList.add("image-desactive");
+      img--;
+    } else {
+      if (img == -1) {
+        for (let i = 5; i >= 0; i--) {
+          images[i].classList.remove("image-desactive");
+        }
+        img = 5;
+      }
+      if (img == 0) {
+        images[5].classList.remove("image-desactive");
+      }
+      images[img].classList.add("image-desactive");
+      img--;
     }
-    if (img == 0) {
-      images[5].classList.remove("image-desactive");
-    }
-    images[img].classList.add("image-desactive");
-    img--;
   }, 3000);
 }, 1000);
 // end main slider

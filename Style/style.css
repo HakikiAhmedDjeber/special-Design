@@ -71,6 +71,9 @@ a {
   filter: brightness(0.5) grayscale(0.1);
   transition: 0.4s;
 }
+.main .background img.small {
+  display: none;
+}
 .image-desactive {
   filter: brightness(0.5) grayscale(0.1) blur(10px);
   opacity: 0;
@@ -179,12 +182,6 @@ a {
   top: 50%;
   right: -90px;
   transform: translatey(75%);
-  transition: 0.2s;
-  z-index: -2;
-}
-.main .main-text a:hover::before {
-  right: 0;
-  transform: translate(-50%, 75%);
 }
 .main .fields {
   height: 205px;
@@ -280,6 +277,14 @@ a {
   }
   .main .container .main-text {
     margin: 15vh 0;
+  }
+}
+@media (max-width: 768px) {
+  .main .background img {
+    display: none;
+  }
+  .main .background img.small {
+    display: block !important;
   }
 }
 /* end main */
