@@ -29,3 +29,22 @@ setTimeout(() => {
   }, 3000);
 }, 1000);
 // end main slider
+// star burger
+const burgers = document.querySelectorAll(".main .burger i");
+const menu = document.querySelector(".main .main-nav ul");
+burgers[0].addEventListener("click", () => {
+  burgers[0].classList.remove("active-mark");
+  burgers[1].classList.add("active-mark");
+  menu.classList.toggle("active-menu");
+});
+burgers[1].addEventListener("click", () => {
+  burgers[1].classList.remove("active-mark");
+  burgers[0].classList.add("active-mark");
+  menu.classList.toggle("active-menu");
+});
+menu.onclick = () => {
+  burgers[1].classList.remove("active-mark");
+  burgers[0].classList.add("active-mark");
+  menu.classList.toggle("active-menu");
+};
+// end burger

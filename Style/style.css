@@ -87,6 +87,7 @@ a {
   z-index: 20;
 }
 .main .main-nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -167,6 +168,7 @@ a {
   font-size: 20px;
   font-style: italic;
   z-index: 2;
+  border-radius: 2px;
 }
 .main .main-text a::before {
   position: absolute;
@@ -220,5 +222,64 @@ a {
 }
 .active-field {
   height: 100% !important;
+}
+.main .burger {
+  display: none;
+}
+@media (max-width: 992px) {
+  .main .burger {
+    display: block;
+  }
+  .main .burger i {
+    display: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .main .burger i.active-mark {
+    display: block;
+  }
+  .main .main-nav ul {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    top: 50px;
+    background: #b5adad38;
+    backdrop-filter: blur(16px);
+    padding: 10px;
+  }
+  .main .main-nav ul.active-menu {
+    display: flex;
+  }
+  .main .main-nav ul a {
+    position: relative;
+    padding: 10px;
+    border: none !important;
+  }
+  .main .main-nav ul a::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: var(--main-blue);
+    z-index: -1;
+    height: 100%;
+    width: 0;
+    transition: 0.3s;
+    filter: blur(12px);
+  }
+  .main .main-nav ul a:hover:after {
+    width: 100%;
+  }
+  .main .fields {
+    display: none;
+  }
+  .main .container {
+    justify-content: initial;
+  }
+  .main .container .main-text {
+    margin: 15vh 0;
+  }
 }
 /* end main */
