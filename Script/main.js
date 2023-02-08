@@ -42,7 +42,7 @@ setTimeout(() => {
       img--;
     }
   }, 3000);
-}, 1000);
+}, 2000);
 // end main slider
 // star burger
 const burgers = document.querySelectorAll(".main .burger i");

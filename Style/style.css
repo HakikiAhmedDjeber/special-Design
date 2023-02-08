@@ -1,6 +1,6 @@
 /* start variables */
 :root {
-  --main-blue: #3f3fe8;
+  --main-color: #3f3fe8;
   --grey-font: #b5adad;
 }
 /* end varibales */
@@ -143,7 +143,7 @@ a {
   content: "";
   top: 0;
   left: 0;
-  background-color: var(--main-blue);
+  background-color: var(--main-color);
   z-index: -1;
   height: 100%;
   width: 0;
@@ -163,11 +163,11 @@ a {
   color: white;
 }
 .main .main-text span {
-  color: var(--main-blue);
+  color: var(--main-color);
 }
 .main .main-text a {
   position: relative;
-  color: var(--main-blue);
+  color: var(--main-color);
   font-size: 20px;
   font-style: italic;
   z-index: 2;
@@ -259,7 +259,7 @@ a {
     content: "";
     top: 0;
     left: 0;
-    background-color: var(--main-blue);
+    background-color: var(--main-color);
     z-index: -1;
     height: 100%;
     width: 0;
@@ -267,6 +267,9 @@ a {
     filter: blur(12px);
   }
   .main .main-nav ul a:hover:after {
+    width: 100%;
+  }
+  .main .main-text {
     width: 100%;
   }
   .main .fields {
@@ -285,6 +288,10 @@ a {
   }
   .main .background img.small {
     display: block !important;
+  }
+  .main .container .main-text {
+    width: 100%;
+    margin: 10vh 0;
   }
 }
 /* end main */
