@@ -1,0 +1,207 @@
+/* start variables */
+:root {
+  --main-blue: #3f3fe8;
+  --grey-font: #b5adad;
+}
+/* end varibales */
+/* start global rules */
+* {
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto Slab", serif;
+  overflow: hidden;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/* small*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium*/
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/*large*/
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end global rules */
+/* start components */
+
+/* end components */
+/* start main */
+.main .background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: inline-flex;
+}
+.main .background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5) grayscale(0.1);
+  transition: 0.3s;
+}
+.image-desactive {
+  opacity: 0;
+}
+.main .container {
+  background-color: transparent;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.main .main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .main-nav > a {
+  font-family: "Aref Ruqaa Ink", serif;
+  font-size: 25px;
+  background-image: linear-gradient(45deg, #ffffff, #5eb6fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 15px;
+  font-weight: bold;
+}
+.main .main-nav ul {
+  display: flex;
+  gap: 30px;
+}
+.main .main-nav ul li {
+}
+.main .main-nav ul a {
+  padding: 10px 0;
+  display: block;
+  text-transform: capitalize;
+  font-size: 18px;
+  color: white;
+}
+.main .main-nav #contact-btn {
+  position: relative;
+  padding: 10px;
+  border: 1px solid;
+  border-color: white transparent white white;
+}
+.main .main-nav #contact-btn::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: var(--main-blue);
+  z-index: -1;
+  height: 100%;
+  width: 0;
+  transition: 0.3s;
+}
+.main .main-nav #contact-btn:hover:after {
+  width: 100%;
+}
+.main .main-text {
+  margin: 50px 0;
+  width: 50vw;
+}
+.main .main-text p {
+  font-size: 60px;
+  margin-bottom: 30px;
+  color: white;
+}
+.main .main-text span {
+  color: var(--main-blue);
+}
+.main .main-text a {
+  position: relative;
+  color: var(--main-blue);
+  font-size: 20px;
+  font-style: italic;
+  z-index: 2;
+}
+.main .main-text a::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 70px;
+  background-color: white;
+  top: 50%;
+  right: -90px;
+  transform: translatey(75%);
+  transition: 0.2s;
+  z-index: -2;
+}
+.main .main-text a:hover::before {
+  right: 0;
+  transform: translate(-50%, 75%);
+}
+.main .fields {
+  height: 205px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 50px;
+  align-items: flex-end;
+}
+.main .fields .field {
+  width: calc(100% / 6);
+  padding: 5px;
+  backdrop-filter: blur(15px);
+  background: #ffffff2e;
+  border-radius: 2px;
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  height: 70px;
+  overflow: hidden;
+  transition: height 0.4s;
+}
+.main .fields .number {
+  color: var(--grey-font);
+  margin-bottom: 2px;
+}
+.main .fields h3 {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 20px;
+}
+.main .fields .field p:last-child {
+  font-size: 14px;
+  color: var(--grey-font);
+}
+.active-field {
+  height: 100% !important;
+}
+/* end main */
