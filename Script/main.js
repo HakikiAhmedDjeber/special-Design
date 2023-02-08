@@ -63,3 +63,10 @@ menu.onclick = () => {
   menu.classList.toggle("active-menu");
 };
 // end burger
+// start settings
+const gear = document.querySelector(".settings-box .gear");
+const settingsBox = document.querySelector(".settings-box");
+gear.addEventListener("click", () => {
+  settingsBox.classList.toggle("active");
+});
+// end settings

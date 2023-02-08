@@ -21,6 +21,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  position: relative;
   font-family: "Roboto Slab", serif;
   overflow: hidden;
 }
@@ -295,3 +296,48 @@ a {
   }
 }
 /* end main */
+/* start settings */
+.settings-box {
+  position: absolute;
+  color: white;
+  right: -30vw;
+  display: flex;
+  top: 20%;
+  transition: 0.3s;
+  z-index: 21;
+}
+.settings-box.active {
+  right: 0;
+}
+.settings-box .gear {
+  padding: 5px;
+  background: #ffffff47;
+  backdrop-filter: blur(10px);
+  align-self: flex-start;
+  border-radius: 2px 0 0 2px;
+}
+.settings-box i {
+  cursor: pointer;
+  font-size: 20px;
+}
+.settings-box i:hover {
+  animation: rotate 1s infinite;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(365deg);
+  }
+}
+.settings-box .settings {
+  padding: 10px;
+  background: #ffffff47;
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 0 2px;
+  height: 40vh;
+  width: 30vw;
+}
+.settings-box .settings .title {
+  letter-spacing: 1.5px;
+  text-decoration: underline;
+}
+/* end settings */
