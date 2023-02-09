@@ -64,9 +64,65 @@ menu.onclick = () => {
 };
 // end burger
 // start settings
+//open and close
 const gear = document.querySelector(".settings-box .gear");
 const settingsBox = document.querySelector(".settings-box");
 gear.addEventListener("click", () => {
+  if (settingsBox.className.includes("active")) localStorage.clear();
   settingsBox.classList.toggle("active");
 });
+//change colors and fonts
+const root = document.querySelector(":root");
+const colorsList = document.querySelectorAll(
+  ".settings-box .settings .main-list .color-list li"
+);
+const fontsList = document.querySelectorAll(
+  ".settings-box .settings .main-list .font-list li"
+);
+const fonts = [
+  "'Aref Ruqaa Ink', serif",
+  "'Roboto Slab', serif",
+  "'Open Sans', sans-serif",
+];
+const colors = ["#3f3fe8", "#e434e4", "#e63a3a", "#3dab37"];
+fontsList.forEach((ele, i) => {
+  ele.addEventListener("click", () => {
+    console.log(i);
+    document.documentElement.style.setProperty("--main-font", fonts[i]);
+    localStorage.setItem("font", fonts[i]);
+  });
+});
+colorsList.forEach((ele, i) => {
+  ele.addEventListener("click", () => {
+    document.documentElement.style.setProperty("--main-color", colors[i]);
+    localStorage.setItem("color", colors[i]);
+  });
+});
+// save on local storage and cancel
+const save = document.getElementById("Save");
+const cancel = document.getElementById("Cancel");
+cancel.addEventListener("click", () => {
+  settingsBox.classList.remove("active");
+  localStorage.clear();
+  document.documentElement.style.removeProperty("--main-font");
+  document.documentElement.style.removeProperty("--main-color");
+});
+save.addEventListener("click", () => {
+  settingsBox.classList.remove("active");
+});
+if (localStorage.length > 0) {
+  if (localStorage.getItem("font") !== null) {
+    document.documentElement.style.setProperty(
+      "--main-font",
+      localStorage.getItem("font")
+    );
+  }
+  if (localStorage.getItem("color") !== null) {
+    document.documentElement.style.setProperty(
+      "--main-color",
+      localStorage.getItem("color")
+    );
+  }
+}
+//document.body.style.setProperty("--main-font", "sans-serif");
 // end settings

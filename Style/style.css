@@ -2,6 +2,7 @@
 :root {
   --main-color: #3f3fe8;
   --grey-font: #b5adad;
+  --main-font: "Roboto Slab", serif;
 }
 /* end varibales */
 /* start global rules */
@@ -22,7 +23,7 @@ html {
 }
 body {
   position: relative;
-  font-family: "Roboto Slab", serif;
+  font-family: var(--main-font);
   overflow: hidden;
 }
 ul {
@@ -300,7 +301,7 @@ a {
 .settings-box {
   position: absolute;
   color: white;
-  right: -30vw;
+  right: -290px;
   display: flex;
   top: 20%;
   transition: 0.3s;
@@ -333,11 +334,75 @@ a {
   background: #ffffff47;
   backdrop-filter: blur(10px);
   border-radius: 0 0 0 2px;
-  height: 40vh;
-  width: 30vw;
+  height: fit-content;
+  width: 290px;
 }
 .settings-box .settings .title {
   letter-spacing: 1.5px;
   text-decoration: underline;
+}
+.settings-box .settings .main-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.settings-box .settings .main-list h4 {
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.settings-box .settings .main-list .color-list {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  margin-left: 35px;
+}
+.settings-box .settings .main-list .color-list li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid;
+  cursor: pointer;
+}
+.color-list #blue-color {
+  background-color: #3f3fe8;
+}
+.color-list #purple-color {
+  background-color: #e434e4;
+}
+.color-list #red-color {
+  background-color: #e63a3a;
+}
+.color-list #green-color {
+  background-color: #3dab37;
+}
+.settings-box .settings .main-list .font-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 35px;
+}
+.settings-box .settings .main-list .font-list li {
+  cursor: pointer;
+}
+.settings-box .settings .main-list .buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.settings-box .settings .main-list .buttons input {
+  border: 1px solid white;
+  padding: 7px 0;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  width: 70px;
+}
+.main-list .buttons input[value="Save"] {
+  background-color: #3f3fe8;
+}
+.main-list .buttons input[value="Cancel"] {
+  background-color: #e63a3a;
 }
 /* end settings */
