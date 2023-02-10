@@ -115,6 +115,7 @@ cancel.addEventListener("click", () => {
   localStorage.clear();
   document.documentElement.style.removeProperty("--main-font");
   document.documentElement.style.removeProperty("--main-color");
+  fontsParent.style.removeProperty("--point-position");
 });
 save.addEventListener("click", () => {
   settingsBox.classList.remove("active");
@@ -126,7 +127,7 @@ if (localStorage.length > 0) {
       localStorage.getItem("font")
     );
     fontsParent.style.setProperty(
-      "  --point-position",
+      "--point-position",
       localStorage.getItem("circlePosition")
     );
   }
