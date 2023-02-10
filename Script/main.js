@@ -42,8 +42,9 @@ setTimeout(() => {
       img--;
     }
   }, 3000);
-}, 2000);
+}, 3000);
 // end main slider
+
 // star burger
 const burgers = document.querySelectorAll(".main .burger i");
 const menu = document.querySelector(".main .main-nav ul");
@@ -63,6 +64,7 @@ menu.onclick = () => {
   menu.classList.toggle("active-menu");
 };
 // end burger
+
 // start settings
 //open and close
 const gear = document.querySelector(".settings-box .gear");
@@ -87,11 +89,12 @@ const fonts = [
 const fontsParent = fontsList[0].parentNode;
 const circlePosition = ["6.5px", "27px", "52px"];
 localStorage.setItem("circlePosition", circlePosition[1]);
-const colors = ["#3f3fe8", "#e434e4", "#e63a3a", "#3dab37"];
+const colors = ["#3f3fe8", "#9b3de0", "#e63a3a", "#3dab37"];
 fontsList.forEach((ele, i) => {
   ele.addEventListener("click", () => {
     // transition effects
     fontsParent.style.setProperty("--point-position", circlePosition[i]);
+    // set color on root
     document.documentElement.style.setProperty("--main-font", fonts[i]);
     localStorage.setItem("font", fonts[i]);
   });
