@@ -3,6 +3,7 @@
   --main-color: #3f3fe8;
   --grey-font: #b5adad;
   --main-font: "Roboto Slab", serif;
+  overflow: hidden;
 }
 /* end varibales */
 /* start global rules */
@@ -90,6 +91,7 @@ a {
   top: 0;
   left: 0;
   z-index: 20;
+  width: 100vw;
 }
 .main .main-nav {
   position: relative;
@@ -243,13 +245,17 @@ a {
     position: absolute;
     flex-direction: column;
     width: 100%;
-    top: 50px;
+    top: 120px;
     background: #b5adad38;
     backdrop-filter: blur(16px);
     padding: 10px;
+    opacity: 0;
   }
   .main .main-nav ul.active-menu {
     display: flex;
+    opacity: 1;
+    top: 50px;
+    transition: 3s;
   }
   .main .main-nav ul a {
     position: relative;
