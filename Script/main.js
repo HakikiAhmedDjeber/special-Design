@@ -84,16 +84,25 @@ const fonts = [
   "'Roboto Slab', serif",
   "'Open Sans', sans-serif",
 ];
+const fontsParent = fontsList[0].parentNode;
+const circlePosition = ["6.5px", "27px", "52px"];
+localStorage.setItem("circlePosition", circlePosition[1]);
 const colors = ["#3f3fe8", "#e434e4", "#e63a3a", "#3dab37"];
 fontsList.forEach((ele, i) => {
   ele.addEventListener("click", () => {
-    console.log(i);
+    // transition effects
+    fontsParent.style.setProperty("--point-position", circlePosition[i]);
     document.documentElement.style.setProperty("--main-font", fonts[i]);
     localStorage.setItem("font", fonts[i]);
   });
 });
 colorsList.forEach((ele, i) => {
   ele.addEventListener("click", () => {
+    // transition effects
+    colorsList.forEach((ele) => {
+      ele.classList.remove("checked");
+    });
+    ele.classList.add("checked");
     document.documentElement.style.setProperty("--main-color", colors[i]);
     localStorage.setItem("color", colors[i]);
   });
@@ -116,6 +125,10 @@ if (localStorage.length > 0) {
       "--main-font",
       localStorage.getItem("font")
     );
+    fontsParent.style.setProperty(
+      "  --point-position",
+      localStorage.getItem("circlePosition")
+    );
   }
   if (localStorage.getItem("color") !== null) {
     document.documentElement.style.setProperty(
@@ -124,5 +137,4 @@ if (localStorage.length > 0) {
     );
   }
 }
-//document.body.style.setProperty("--main-font", "sans-serif");
 // end settings

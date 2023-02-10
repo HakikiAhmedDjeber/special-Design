@@ -363,6 +363,10 @@ a {
   border-radius: 50%;
   border: 1px solid;
   cursor: pointer;
+  transition: 0.5s;
+}
+.settings-box .settings .main-list .color-list li.checked {
+  border-radius: 0;
 }
 .color-list #blue-color {
   background-color: #3f3fe8;
@@ -377,10 +381,23 @@ a {
   background-color: #3dab37;
 }
 .settings-box .settings .main-list .font-list {
+  --point-position: 27px;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
   margin-left: 35px;
+}
+.settings-box .settings .main-list .font-list::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: white;
+  left: -15px;
+  border-radius: 50%;
+  top: var(--point-position);
+  transition: 0.3s;
 }
 .settings-box .settings .main-list .font-list li {
   cursor: pointer;
@@ -402,7 +419,7 @@ a {
 .main-list .buttons input[value="Save"] {
   background-color: #3f3fe8;
 }
-.main-list .buttons input[value="Cancel"] {
+.main-list .buttons input[value="Reset"] {
   background-color: #e63a3a;
 }
 /* end settings */
