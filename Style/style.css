@@ -52,6 +52,18 @@ a {
     width: 1170px;
   }
 }
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-button {
+  display: none;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #777;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--main-dark-color);
+}
 /* end global rules */
 /* start components */
 
@@ -527,3 +539,71 @@ a {
   }
 }
 /* end about */
+/* start skills */
+#skills {
+  width: 100%;
+  overflow: hidden;
+  background-image: url(../images/skills.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 50px 0;
+}
+#skills h2 {
+  margin: 35px auto;
+  text-align: center;
+  font-size: 2em;
+  color: var(--main-color);
+  background: #ffffff1a;
+  backdrop-filter: blur(25px);
+  border-radius: 5px 0;
+  width: fit-content;
+  padding: 5px 10px;
+}
+#skills .skills {
+  margin: 20px 0;
+  border-radius: 2px;
+  background: #ffffff1a;
+  backdrop-filter: blur(30px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#skills .skills .skill {
+  display: flex;
+  align-items: center;
+}
+#skills .skills .skill .skill-name {
+  color: var(--grey-font);
+  width: 10%;
+}
+#skills .skills .skill .skill-percent {
+  width: 90%;
+  background: var(--grey-font);
+  border-radius: 2px;
+  height: 25px;
+  overflow: hidden;
+}
+#skills .skills .skill .skill-percent span {
+  height: 100%;
+  display: block;
+  width: 0;
+  background: var(--main-color);
+  transition-delay: 0.1s;
+  transition-duration: 0.7s;
+}
+@media (max-width: 992px) {
+  #skills {
+    padding: 30px 0;
+  }
+  #skills .skills {
+    padding: 10px;
+  }
+  #skills .skills .skill .skill-name {
+    width: 27%;
+  }
+  #skills .skills .skill .skill-percent {
+    width: 73%;
+  }
+}
+/* end skills */

@@ -142,3 +142,17 @@ if (localStorage.length > 0) {
   }
 }
 // end settings
+// start skills
+const skills = document.querySelectorAll(
+  "#skills .skills .skill .skill-percent span"
+);
+const skillsPercent = ["90%", "80%", "70%", "50%", "80%", "95%"];
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 1000) {
+    skills.forEach((element, i) => {
+      element.style.setProperty("width", skillsPercent[i]);
+      console.log(element, skillsPercent[i]);
+    });
+  }
+});
+// end skills
