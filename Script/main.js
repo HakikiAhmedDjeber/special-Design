@@ -151,8 +151,24 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 1000) {
     skills.forEach((element, i) => {
       element.style.setProperty("width", skillsPercent[i]);
-      console.log(element, skillsPercent[i]);
     });
   }
 });
 // end skills
+// start gallery
+const galleryImages = document.querySelectorAll("#gallery .container img");
+const popup = document.querySelector("#gallery .popup");
+const popupImg = document.querySelector("#gallery .popup img");
+const popupDes = document.querySelector("#gallery .popup .description");
+const popupexit = document.querySelector("#gallery .popup i");
+galleryImages.forEach((ele, i) => {
+  ele.addEventListener("click", () => {
+    popupImg.src = `./images/Gallery/${i + 1}.jpg`;
+    popupDes.innerHTML = `${ele.alt}`;
+    popup.style.display = "flex";
+  });
+});
+popupexit.onclick = () => {
+  popup.removeAttribute("style");
+};
+// end gallery
