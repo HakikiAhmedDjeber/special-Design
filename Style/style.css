@@ -783,3 +783,43 @@ body::-webkit-scrollbar-track {
   }
 }
 /* end timeline */
+/* start featrues */
+#featrues {
+  padding: 50px 0;
+  background: var(--main-dark-color);
+  color: white;
+}
+#featrues .container {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#featrues .box {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  align-items: center;
+  flex: 1;
+}
+#featrues .box img {
+  width: 150px;
+}
+#featrues .box p {
+  text-align: center;
+}
+#featrues .box h3 {
+  position: relative;
+  margin-bottom: 15px;
+}
+#featrues .box h3::after {
+  position: absolute;
+  content: "";
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--main-color);
+  width: 60%;
+  height: 2px;
+}
+/* end featrues */
