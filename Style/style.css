@@ -686,9 +686,14 @@ body::-webkit-scrollbar-track {
   background: var(--main-dark-color);
   color: white;
 }
+#timeline .container {
+  display: flex;
+  justify-content: center;
+}
 #timeline .boxes {
   position: relative;
   margin: 0 100px;
+  width: 741px;
 }
 #timeline .boxes::before {
   position: absolute;
@@ -711,7 +716,7 @@ body::-webkit-scrollbar-track {
 }
 #timeline .text {
   position: relative;
-  width: 325px;
+  width: calc(50% - 45px);
   margin-bottom: 20px;
   padding: 10px;
   background: #444343;
@@ -747,8 +752,14 @@ body::-webkit-scrollbar-track {
 #timeline .right {
   float: right;
 }
-#timeline .right::before {left: -8px;}
-#timeline .right::after {right: 0;left: -55px;top: 13px;}
+#timeline .right::before {
+  left: -8px;
+}
+#timeline .right::after {
+  right: 0;
+  left: -54px;
+  top: 13px;
+}
 #timeline .clear {
   clear: both;
 }
