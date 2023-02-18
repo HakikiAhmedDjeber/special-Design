@@ -77,6 +77,10 @@ body::-webkit-scrollbar-track {
   width: fit-content;
   padding: 5px 10px;
 }
+input:focus,
+textarea:focus {
+  outline: none;
+}
 /* end components */
 /* start main */
 .main {
@@ -885,3 +889,56 @@ body::-webkit-scrollbar-track {
   color: #444;
 }
 /* end testimonials */
+/* start contact */
+#contact {
+  background-image: url(../images/earth.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 50px 0;
+}
+#contact h2 {
+  margin: 30px auto 40px;
+}
+#contact form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#contact .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 350px;
+}
+#contact .message {
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#contact .info input {
+  padding: 10px;
+}
+#contact .message input {
+  padding: 10px;
+  cursor: pointer;
+  background: var(--main-color);
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+#contact .message textarea {
+  padding: 10px;
+  width: 100% !important;
+  height: 147px !important;
+}
+#contact input::placeholder,
+#contact textarea::placeholder {
+  transition: 0.3s;
+}
+#contact input:focus::placeholder,
+#contact textarea:focus::placeholder {
+  opacity: 0;
+}
+/* end contact */
