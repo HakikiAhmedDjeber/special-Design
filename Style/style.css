@@ -281,8 +281,9 @@ body::-webkit-scrollbar-track {
   .main .main-nav ul.active-menu {
     display: flex;
     opacity: 1;
-    top: 50px;
+    top: 60px;
     transition: 3s;
+    z-index: 3;
   }
   .main .main-nav ul a {
     position: relative;
