@@ -763,4 +763,22 @@ body::-webkit-scrollbar-track {
 #timeline .clear {
   clear: both;
 }
+/* mobile view */
+@media (max-width: 768px) {
+  #timeline .text::after,
+  #timeline .text::before {
+    display: none;
+  }
+  #timeline .right {
+    float: none;
+  }
+  #timeline .boxes {
+    width: 100%;
+    margin: 0;
+  }
+  #timeline .text {
+    width: 80%;
+    margin: 20px auto;
+  }
+}
 /* end timeline */
